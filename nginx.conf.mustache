@@ -1,0 +1,43 @@
+
+#user  nobody;
+#Defines which Linux system user will own and run the Nginx server
+
+
+worker_processes  1;
+#Referes to single threaded process. Generally set to be equal to the number of CPUs or cores.
+
+#error_log  logs/error.log; #error_log  logs/error.log  notice;
+#Specifies the file where server logs.
+
+#pid        logs/nginx.pid;
+#nginx will write its master process ID(PID).
+
+events {
+    worker_connections  1024;
+    # worker_processes and worker_connections allows you to calculate maxclients value:
+    # max_clients = worker_processes * worker_connections
+}
+
+
+http {
+
+server {
+   listen 80;
+server_name localhost;
+
+add_header Docker-Distribution-Api-Version registry/2.0 always;
+
+proxy_set_header Host $host;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-Proto $scheme;
+proxy_set_header X-Original-URI $request_uri;
+proxy_set_header Docker-Distribution-Api-Version registry/2.0;
+
+location / {
+auth_basic "Restricted";
+auth_basic_user_file /etc/nginx/.htpasswd;
+proxy_pass {{target}};
+}
+}
+}

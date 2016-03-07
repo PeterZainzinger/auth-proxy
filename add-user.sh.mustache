@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+touch /etc/nginx/.htpasswd
+{{#users}}
+htpasswd -b /etc/nginx/.htpasswd {{name}} {{password}} 
+{{/users}}
+
+
