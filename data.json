@@ -1,9 +1,11 @@
 {
     "target": "http://192.168.99.2:3000",
-    "users": [
-        {
-            "name": "testme",
-            "password": "peter"
-        }
-    ]
+    "auth":{
+        "users": [
+            {
+                "name": "testme",
+                "password": "peter"
+            }
+        ] 
+    }
 }
