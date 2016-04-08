@@ -1,3 +1,7 @@
 {
     "target": "http://192.168.99.2:3000",
+    "ssl":{
+      "certPath":"/etc/certs/tls.crt",
+      "keyPath":"/etc/certs/tls.key",
+    }
 }
