@@ -4,5 +4,8 @@
     "ssl":{
       "certPath":"/etc/certs/tls.crt",
       "keyPath":"/etc/certs/tls.key",
-    }
+    },
+    "headers":[
+      {"key":"dasdflask", "value":"adsfklasjdfl"}
+    ]
 }

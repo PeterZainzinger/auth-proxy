@@ -1,5 +1,5 @@
 {
-    "target": "http://192.168.99.2:3000",
+    "target": "192.168.99.2:3000",
     "auth":{
         "users": [
             {
@@ -7,5 +7,9 @@
                 "password": "peter"
             }
         ] 
-    }
+    },
+    "headers":[
+      {"key":"dasdflask", "value":"adsfklasjdfl"}
+    ]
+
 }

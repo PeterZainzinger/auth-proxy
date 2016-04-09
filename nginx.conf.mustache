@@ -6,6 +6,10 @@ events {
 
 http {
 
+    {{#headers}}
+        add_header "{{key}}" "{{value}}" always;
+    {{/headers}}
+
 	upstream server{
 	  server                    {{target}} fail_timeout=0;
 	}
