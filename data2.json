@@ -1,5 +1,6 @@
 {
-    "target": "http://192.168.99.2:3000",
+    "target": "192.168.99.2:3000",
+    "host":"git.peterzainzinger.me",
     "ssl":{
       "certPath":"/etc/certs/tls.crt",
       "keyPath":"/etc/certs/tls.key",
