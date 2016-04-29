@@ -10,6 +10,8 @@
     },
     "headers":[
       {"key":"dasdflask", "value":"adsfklasjdfl"}
-    ]
-
+    ],
+    "clientMaxSize":{
+        "value":"600M"
+    }
 }

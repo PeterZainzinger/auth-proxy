@@ -22,7 +22,9 @@ http {
 	  root                      /dev/null;
 
 	  # Increase this if you want to upload larger attachments
-	  client_max_body_size      20m;
+      {{#clientMaxSize}}
+	  client_max_body_size     {{value}};
+      {{/clientMaxSize}}
 
 	  # individual nginx logs for this vhost
 	  access_log                /var/log/nginx/access.log;
@@ -58,7 +60,9 @@ http {
 	  root                      /dev/null;
 
 	  ## Increase this if you want to upload larger attachments
-	  client_max_body_size      20m;
+      {{#clientMaxSize}}
+	  client_max_body_size     {{value}};
+      {{/clientMaxSize}}
 
 	  ## SSL
 	  ssl                       on;
